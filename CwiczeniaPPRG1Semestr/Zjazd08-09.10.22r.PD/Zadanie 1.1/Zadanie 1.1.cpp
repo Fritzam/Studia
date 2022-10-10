@@ -13,7 +13,7 @@ int main()
     cout << "Proszę podać numer indeksu: " << endl;
     cin >> numer_indeksu;
 
-    //Realizacja zadania
+    //Realizacja zadania.
     cout << "Imię użytkownika to: " << imie << '.' << endl;
     cout << "Indeks użytkownika to: " << 's' << numer_indeksu << '.' << endl;
     cout << "Polsko-Japońska Akademia Technik Komputerowych" << endl;
