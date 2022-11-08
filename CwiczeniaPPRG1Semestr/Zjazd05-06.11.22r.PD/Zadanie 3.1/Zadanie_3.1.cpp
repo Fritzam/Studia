@@ -9,17 +9,20 @@ int main() {
     cout << "Prosze podac wartosci x i y: " << endl;
     cin >> x >> y;
 
+    cout << "--------------------------------------" << endl;
+
     float dodawanie = x + y;
     float odejmowanie = x - y;
-    float mnożenie = x * y;
+    float mnozenie = x * y;
     float dzielenie = x / y;
-    cout << "Dodawanie: " << dodawanie << setprecision(2) << endl;
-    cout << "Odejmowanie: " << odejmowanie << setprecision(2) << endl;
-    cout << "Mnozenie: " << mnożenie << setprecision(2) << endl;
+
+    cout << "Dodawanie: " << fixed << setprecision(2) << dodawanie << endl;
+    cout << "Odejmowanie: " << fixed << setprecision(2) << odejmowanie << endl;
+    cout << "Mnozenie: " << fixed << setprecision(2) << mnozenie << endl;
     if (x == 0 || y == 0) {
         cout << "Dzielenie: " << "Nie mozna dzielic przez 0." << endl;
     } else {
-        cout << "Dzielenie: " << x / y << endl;
+        cout << "Dzielenie: " << fixed << setprecision(2) << dzielenie << endl;
     }
     return 0;
 }
