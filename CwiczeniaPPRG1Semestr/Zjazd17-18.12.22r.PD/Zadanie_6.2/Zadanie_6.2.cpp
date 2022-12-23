@@ -2,10 +2,11 @@
 #include <string>
 #include <cstdlib>
 #include <array>
+#include <vector>
 
 using namespace std;
 
-
+//Inicjalizacja struktury uczen.
 struct uczen {
     string imie_ucznia;
     int ocena_z_informatyki;
@@ -14,6 +15,7 @@ struct uczen {
     int ocena_z_jezyka_polskiego;
 };
 
+//Funkcja generująca losową ocenę.
 int generuj_losowa_ocene() {
     int output = 1 + (rand() % (int)(6 - 1 + 1));
     return output;
@@ -21,14 +23,21 @@ int generuj_losowa_ocene() {
 
 
 int main() {
+    //Deklaracja zmiennych.
     int wybor_ucznia;
     int wybor_przedmiotu;
 
+    //Inicjalizacja array potrzebnych do łatwego wywoływania imion i przedmiotów.
     array <string, 6> imiona = {"Alicja", "Marta", "Agnieszka", "Maciek", "Wojtek", "Marek"};
     array <string, 4> przedmioty = {"Informatyka", "Matematyka", "Biologia", "Język Polski"};
 
+    //Deklaracja 6 instancji struktury uczen.
     struct uczen uczen1, uczen2, uczen3, uczen4, uczen5, uczen6;
 
+    //Deklaracja wektora uczniowie.
+    vector <uczen> uczniowie;
+
+    //Inicjalizacja dla każdej instacji ucznia.
     uczen1 = {imiona[0], generuj_losowa_ocene(), generuj_losowa_ocene(), generuj_losowa_ocene(), generuj_losowa_ocene()};
     uczen2 = {imiona[1], generuj_losowa_ocene(), generuj_losowa_ocene(), generuj_losowa_ocene(), generuj_losowa_ocene()};
     uczen3 = {imiona[2], generuj_losowa_ocene(), generuj_losowa_ocene(), generuj_losowa_ocene(), generuj_losowa_ocene()};
@@ -36,6 +45,16 @@ int main() {
     uczen5 = {imiona[4], generuj_losowa_ocene(), generuj_losowa_ocene(), generuj_losowa_ocene(), generuj_losowa_ocene()};
     uczen6 = {imiona[5], generuj_losowa_ocene(), generuj_losowa_ocene(), generuj_losowa_ocene(), generuj_losowa_ocene()};
 
+    //Ręczne wepchnięcie instacji ucznia do wektora.
+    //*Chciałem to zrobić pętlą na zasadzie for(i = 0 etc) {uczniowie.push_back(uczen[i]), ale zabrakło mi pomysłu jak to zrobić, a czas nagli.}*
+    uczniowie.push_back(uczen1);
+    uczniowie.push_back(uczen2);
+    uczniowie.push_back(uczen3);
+    uczniowie.push_back(uczen4);
+    uczniowie.push_back(uczen5);
+    uczniowie.push_back(uczen6);
+
+    //Wyświetlenie listy dostępnych uczniów.
     cout << "Wpisz numer ucznia i oceny, które chcesz uzyskać." << endl;
     cout << "------------------------------------------------------------------" << endl;
     for (int i = 1; i <= 6; i++) {
@@ -43,10 +62,13 @@ int main() {
     }
 
     cout << "------------------------------------------------------------------" << endl;
+
+     //Pobranie numeru konkretnego z uczniów.
     cout << "Wprowadź numer: " << endl;
     cin >> wybor_ucznia;
     cout << "------------------------------------------------------------------" << endl;
 
+    //Wyświetlenie wyboru użytkownika i sprawdzenie, czy jego zmienna mieści się w założeniach.
     switch (wybor_ucznia) {
         case 1:
             cout << "Wybrany przez Ciebie uczeń to: " << uczen1.imie_ucznia << endl;
@@ -74,11 +96,14 @@ int main() {
 
     cout << "------------------------------------------------------------------" << endl;
 
+    //Wyświetlenie listy dostępnych przedmiotów.
     cout << "Wprowadź numer, aby uzyskać ocenę z przedmiotu." << endl;
     for (int i = 1; i <= 4; i++) {
         cout << przedmioty[i - 1] << " ma numer: " << i << endl;
     }
     cout << "------------------------------------------------------------------" << endl;
+
+    //Pobranie zmiennej wskazującej na przedmiot od użytkownika.
     cout << "Wprowadź numer przedmiotu: " << endl;
     cin >> wybor_przedmiotu;
     switch (wybor_przedmiotu) {
@@ -100,105 +125,29 @@ int main() {
     }
     cout << "------------------------------------------------------------------" << endl;
 
-    switch (wybor_ucznia) {
-        case 1:
-            switch (wybor_przedmiotu) {
-                case 1:
-                    cout << "Ocena z przedmiotu: " << przedmioty[wybor_przedmiotu - 1] << " ucznia: " << uczen1.imie_ucznia << " to: " << uczen1.ocena_z_informatyki << endl;
-                    break;
-                case 2:
-                    cout << "Ocena z przedmiotu: " << przedmioty[wybor_przedmiotu - 1] << " ucznia: " << uczen1.imie_ucznia << " to: " << uczen1.ocena_z_matematyki << endl;
-                    break;
-                case 3:
-                    cout << "Ocena z przedmiotu: " << przedmioty[wybor_przedmiotu - 1] << " ucznia: " << uczen1.imie_ucznia << " to: " << uczen1.ocena_z_biologii << endl;
-                    break;
-                case 4:
-                    cout << "Ocena z przedmiotu: " << przedmioty[wybor_przedmiotu - 1] << " ucznia: " << uczen1.imie_ucznia << " to: " << uczen1.ocena_z_jezyka_polskiego << endl;
-                    break;
-            }
-            break;
+    //Wyświetlenie wybranego przez użytkownika ucznia i przedmiotu.
+    cout << "Uczen: " << uczniowie[wybor_ucznia - 1].imie_ucznia << endl;
+    cout << "Przedmiot: " << przedmioty[wybor_przedmiotu - 1] << endl;
 
+    //Wyświetlenie oceny z przedmiotu wybranego ucznia.
+    /*Chciałem wyświetlić ocenę użytkownika tak jak wyżej jego imię, ale nie wiem jak to sprząc z jakąś zmienną,
+        więc musiałem się posłużyć switchem dla wyświetlenia oceny ze struktury. */
+    switch (wybor_przedmiotu) {
+        case 1:
+            cout << "Ocena: " << uczniowie[wybor_ucznia - 1].ocena_z_informatyki << endl;
+            break;
         case 2:
-            switch (wybor_przedmiotu) {
-                case 1:
-                    cout << "Ocena z przedmiotu: " << przedmioty[wybor_przedmiotu - 1] << " ucznia: " << uczen2.imie_ucznia << " to: " << uczen2.ocena_z_informatyki << endl;
-                    break;
-                case 2:
-                    cout << "Ocena z przedmiotu: " << przedmioty[wybor_przedmiotu - 1] << " ucznia: " << uczen2.imie_ucznia << " to: " << uczen2.ocena_z_matematyki << endl;
-                    break;
-                case 3:
-                    cout << "Ocena z przedmiotu: " << przedmioty[wybor_przedmiotu - 1] << " ucznia: " << uczen2.imie_ucznia << " to: " << uczen2.ocena_z_biologii << endl;
-                    break;
-                case 4:
-                    cout << "Ocena z przedmiotu: " << przedmioty[wybor_przedmiotu - 1] << " ucznia: " << uczen2.imie_ucznia << " to: " << uczen2.ocena_z_jezyka_polskiego << endl;
-                    break;
-            }
+            cout << "Ocena: " << uczniowie[wybor_ucznia - 1].ocena_z_matematyki << endl;
             break;
         case 3:
-            switch (wybor_przedmiotu) {
-                case 1:
-                    cout << "Ocena z przedmiotu: " << przedmioty[wybor_przedmiotu - 1] << " ucznia: " << uczen3.imie_ucznia << " to: " << uczen3.ocena_z_informatyki << endl;
-                    break;
-                case 2:
-                    cout << "Ocena z przedmiotu: " << przedmioty[wybor_przedmiotu - 1] << " ucznia: " << uczen3.imie_ucznia << " to: " << uczen3.ocena_z_matematyki << endl;
-                    break;
-                case 3:
-                    cout << "Ocena z przedmiotu: " << przedmioty[wybor_przedmiotu - 1] << " ucznia: " << uczen3.imie_ucznia << " to: " << uczen3.ocena_z_biologii << endl;
-                    break;
-                case 4:
-                    cout << "Ocena z przedmiotu: " << przedmioty[wybor_przedmiotu - 1] << " ucznia: " << uczen3.imie_ucznia << " tooki: " << uczen3.ocena_z_jezyka_polskiego << endl;
-                    break;
-            }
+            cout << "Ocena: " << uczniowie[wybor_ucznia - 1].ocena_z_biologii << endl;
             break;
         case 4:
-            switch (wybor_przedmiotu) {
-                case 1:
-                    cout << "Ocena z przedmiotu: " << przedmioty[wybor_przedmiotu - 1] << " ucznia: " << uczen4.imie_ucznia << " to: " << uczen4.ocena_z_informatyki << endl;
-                    break;
-                case 2:
-                    cout << "Ocena z przedmiotu: " << przedmioty[wybor_przedmiotu - 1] << " ucznia: " << uczen4.imie_ucznia << " to: " << uczen4.ocena_z_matematyki << endl;
-                    break;
-                case 3:
-                    cout << "Ocena z przedmiotu: " << przedmioty[wybor_przedmiotu - 1] << " ucznia: " << uczen4.imie_ucznia << " to: " << uczen4.ocena_z_biologii << endl;
-                    break;
-                case 4:
-                    cout << "Ocena z przedmiotu: " << przedmioty[wybor_przedmiotu - 1] << " ucznia: " << uczen4.imie_ucznia << " to: " << uczen4.ocena_z_jezyka_polskiego << endl;
-                    break;
-            }
-            break;
-        case 5:
-            switch (wybor_przedmiotu) {
-                case 1:
-                    cout << "Ocena z przedmiotu: " << przedmioty[wybor_przedmiotu - 1] << " ucznia: " << uczen5.imie_ucznia << " to: " << uczen5.ocena_z_informatyki << endl;
-                    break;
-                case 2:
-                    cout << "Ocena z przedmiotu: " << przedmioty[wybor_przedmiotu - 1] << " ucznia: " << uczen5.imie_ucznia << " to: " << uczen5.ocena_z_matematyki << endl;
-                    break;
-                case 3:
-                    cout << "Ocena z przedmiotu: " << przedmioty[wybor_przedmiotu - 1] << " ucznia: " << uczen5.imie_ucznia << " to: " << uczen5.ocena_z_biologii << endl;
-                    break;
-                case 4:
-                    cout << "Ocena z przedmiotu: " << przedmioty[wybor_przedmiotu - 1] << " ucznia: " << uczen5.imie_ucznia << " to: " << uczen5.ocena_z_jezyka_polskiego << endl;
-                    break;
-            }
-            break;
-        case 6:
-            switch (wybor_przedmiotu) {
-                case 1:
-                    cout << "Ocena z przedmiotu: " << przedmioty[wybor_przedmiotu - 1] << " ucznia: " << uczen6.imie_ucznia << " to: " << uczen6.ocena_z_informatyki << endl;
-                    break;
-                case 2:
-                    cout << "Ocena z przedmiotu: " << przedmioty[wybor_przedmiotu - 1] << " ucznia: " << uczen6.imie_ucznia << " to: " << uczen6.ocena_z_matematyki << endl;
-                    break;
-                case 3:
-                    cout << "Ocena z przedmiotu: " << przedmioty[wybor_przedmiotu - 1] << " ucznia: " << uczen6.imie_ucznia << " to: " << uczen6.ocena_z_biologii << endl;
-                    break;
-                case 4:
-                    cout << "Ocena z przedmiotu: " << przedmioty[wybor_przedmiotu - 1] << " ucznia: " << uczen6.imie_ucznia << " to: " << uczen6.ocena_z_jezyka_polskiego << endl;
-                    break;
-            }
+            cout << "Ocena: " << uczniowie[wybor_ucznia - 1].ocena_z_jezyka_polskiego << endl;
             break;
     }
+
+    cout << "------------------------------------------------------------------" << endl;
 
     return 0;
 }
