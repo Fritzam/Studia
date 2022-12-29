@@ -16,10 +16,10 @@ int main() {
                 matrix[j][2] = j*j;
             }
             else if (i == 3) {
-                matrix[j][3] = j+4;
+                matrix[j][3] = j+3;
             }
             else if (i == 4) {
-                matrix[j][4] = j-5;
+                matrix[j][4] = j-4;
             }
             else if (i >= 5) {
                 matrix[j][i] = 0;
