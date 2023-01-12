@@ -1,3 +1,6 @@
+/*POLECENIE: Napisz program, który obliczy, ile jest liczb naturalnych (tj. całkowitych, dodatnich) nie większych od nktóre są podzielne przez 5 ale nie są podzielne przez 3.
+Liczba ma być pobrana od użytkownika. (1PKT)*/
+
 #include <iostream>
 #include <vector>
 

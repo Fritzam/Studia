@@ -1,3 +1,12 @@
+/*POLECENIE: Napisz program, który w zadeklarowanej tablicy dwuwymiarowej 10x10 umieszcza: (1PKT)
+-w pierwszej kolumnie liczby od 0 do 9;
+-w drugiej sumę tych liczb (np. 0+0, 1+1 itd..);
+Część bonusowa: (2PKT)
+-w trzeciej –kwadraty tych liczb;
+-w czwartej –sumę numeru wiersza i numeru kolumny;
+-w piątej –wynik różnicy numeru wiersza i numeru kolumny;
+-w pozostałych kolumnach 0.*/
+
 #include <iostream>
 
 using namespace std;

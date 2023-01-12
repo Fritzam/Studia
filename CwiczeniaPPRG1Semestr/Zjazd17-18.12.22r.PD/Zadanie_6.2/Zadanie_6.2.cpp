@@ -1,3 +1,8 @@
+/*POLECENIE: Napisz program, który będzie symulował grupę 6 uczniów z kilku równoległych klas i ich wyniki w nauce z czterech przedmiotów.
+Program powinien wczytać sześciu uczniów o następujących właściwościach:
+•imię ucznia;
+•oceny z informatyki, matematyki, biologii i języka polskiego,a potem odpowiadał na pytania o ocenę z danego przedmiotu, gdzie najpierw pobiera od użytkownika numer ucznia, a następnie –numer przedmiotu. (2PKT)*/
+
 #include <iostream>
 #include <string>
 #include <cstdlib>

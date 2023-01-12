@@ -1,3 +1,19 @@
+/*POLECENIE: Napisz program, który: (1PKT)
+A) Pobierze od Użytkownika liczb "a" oraz "b" oraz wypisze je na ekran.
+B) Wypisze wiersz gwiazdek o długości "a".
+C) Wypisze kolumnę gwiazdek o długości "b".
+D) Wypisze wypełniony prostokąt gwiazdek o wymiarach "a" na "b".
+E) Wypisze obwód (obramowanie) prostokątu gwiazdek o wymiarach "a" na "b".
+**DLA DODATKOWYCH PUNKTÓW** (+2PKT)
+Wypisze trójkąt prostokątny równoramienny:
+•o pionowej przyprostokątnej o długości "a" oraz poziomej przyprostokątnej o długości TAKŻE "a".
+•liczba gwiazdek w kolejnych wierszach: 1, 2, 3, ..., a-1, a.
+•kąt prosty w trójkącie: lewy dolny róg.G*) Jak w podpunkcie F, ale:
+•liczba gwiazdek w kolejnych wierszach NA ODWRÓT: a, a-1, ..., 3, 2, 1;
+•kąt prosty w trójkącie: prawy górny róg. */
+
+
+
 #include <iostream>
 
 using namespace std;

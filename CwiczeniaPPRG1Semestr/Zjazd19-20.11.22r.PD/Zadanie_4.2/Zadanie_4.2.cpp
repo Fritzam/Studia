@@ -1,3 +1,5 @@
+//POLECENIE: Napisz program, który wskazuje najczęściej występujący element w tablicy liczb całkowitych. Liczbę elementów tablicy i ich wartości pobierz od użytkownika. (2PKT)
+
 #include <iostream>
 
 using namespace std;

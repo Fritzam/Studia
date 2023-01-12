@@ -1,3 +1,5 @@
+//POLECENIE: Napisz program, który sprawdzi, czy liczba całkowita jest dodatnia, ujemna czy może jest 0. (1 pkt)​
+
 #include <iostream>
 
 using namespace std;

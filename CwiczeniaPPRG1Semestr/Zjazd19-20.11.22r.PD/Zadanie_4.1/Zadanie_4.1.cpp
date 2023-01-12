@@ -1,3 +1,5 @@
+//POLECENIE: Znajdź największy element danej tablicy liczb całkowitych. Liczbę elementów tablicy i ich wartości pobierz od użytkownika. (1PKT)
+
 #include <iostream>
 
 using namespace std;

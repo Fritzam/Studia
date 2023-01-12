@@ -1,3 +1,5 @@
+/*POLECENIE: Napisz program, który będzie dokonywał konkatenacji podanego przez użytkownika stringa n razy. Liczbę n także należy pobrać od użytkownika. (1PKT) */
+
 #include <iostream>
 #include <string>
 

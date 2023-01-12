@@ -1,3 +1,5 @@
+//POLECENIE: Napisz program do znajdowania największej liczby wśród trzech liczb, podanych przez użytkownika. (1PKT)
+
 #include <iostream>
 using namespace std;
 

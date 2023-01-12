@@ -1,3 +1,5 @@
+//POLECENIE: Napisz program, który sprawdzi, czy podana liczba całkowita jest parzysta, nieparzysta, czy żadna (0). ​(1 PKT)
+
 #include <iostream>
 
 using namespace std;

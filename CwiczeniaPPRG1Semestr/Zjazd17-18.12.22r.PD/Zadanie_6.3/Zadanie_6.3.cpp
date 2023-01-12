@@ -1,3 +1,7 @@
+/*ZADANIE DODATKOWE
+POLECENIE: Napisz program do sortowania wektora struktur studentów według numerów indeksów.
+Struktura Student ma zawierać informacje o: imieniu, nazwisku i numerze indeksu. (2PKT) */
+
 #include <iostream>
 #include <vector>
 #include <string>

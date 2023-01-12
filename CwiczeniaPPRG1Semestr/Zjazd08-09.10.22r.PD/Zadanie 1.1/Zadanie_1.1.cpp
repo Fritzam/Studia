@@ -1,3 +1,4 @@
+//POLECENIE: Napisz program w C++, który wypisze w osobnych liniach Twoje imię, nr studenta i nazwę uczelni. (1PKT)
 #include <iostream>
 #include <string>
 

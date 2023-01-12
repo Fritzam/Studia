@@ -1,3 +1,8 @@
+/*POLECENIE: Napisz program, który umożliwia: (2PKT)
+a) wczytanie aktualnego rozmiaru tablicy liczb całkowitych;
+b) wczytanie elementów tablicy liczb całkowitych;
+c) zamianę miejscami elementów tablicy, lezących po przeciwnej stronie prostej pionowej, dzielącej tablicę na dwie równe części. */
+
 #include <iostream>
 #include <vector>
 

@@ -1,3 +1,9 @@
+/*POLECENIE: Napisz program, w którym:
+a) użytkownik poda liczbę elementów wektora;
+b) pobrane zostaną od użytkownika wszystkie elementy wektora;
+c) wskazana zostanie wartość elementu maksymalnego wektora;
+d) Wskazany zostanie numer indeksu elementu maksymalnego. (2PKT) */
+
 #include <iostream>
 #include <vector>
 
@@ -9,7 +15,7 @@ int main() {
     int element;
     int najwiekszy_element;
     int indeks_największego_elementu;
-    
+
     //Pozyskanie od użytkownika ilości elementów wektora.
     cout << "Proszę podać ilość elementów wektora: " << endl;
     cin >> ilosc_elementow;

@@ -1,3 +1,9 @@
+/*POLECENIE: Napisz program, który będzie rozwiązywał równanie kwadratowe:
+a)Wypisze na konsolę, jaką postać ma równanie kwadratowe.
+b)Pobierze od użytkownika liczby A, B i C.
+c)Wypisze postać równania kwadratowego z uwzględnieniem wartości dla A, B i C.
+d)Obliczy i wypisze pierwiastki równania. (1 PKT) */
+
 #include <iostream>
 #include <cmath>
 

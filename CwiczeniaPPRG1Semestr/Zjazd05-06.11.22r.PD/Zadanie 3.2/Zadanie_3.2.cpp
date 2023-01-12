@@ -1,3 +1,5 @@
+//Napisz program, wyświetlający na ekranie znaki z klawiatury do momentu, aż zostanie podany znak „t”. (1PKT)
+
 #include <iostream>
 #include <string>
 

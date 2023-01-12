@@ -1,3 +1,7 @@
+/*Napisz program, który oblicza sumę, różnicę, iloczyn i iloraz dla dwóch liczb x i y wprowadzanych z klawiatury.
+W programie przyjmujemy, że liczby x i y są typu float(rzeczywistego).
+Dla zmiennych x, y suma, różnica, iloczyn i iloraz należy przyjąć format wyświetlania ich na ekranie z dokładnością do dwóch miejsc po kropce. (1PKT)*/
+
 #include <iostream>
 #include <iomanip>
 using namespace std;

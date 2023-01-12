@@ -1,3 +1,5 @@
+//POLECENIE: Napisz program, który wypisze na ekranie trójkąt Pascala. Liczba wierszy trójkąta ma być pobrana od użytkownika. (1PKT)
+
 #include <iostream>
 
 using namespace std;
