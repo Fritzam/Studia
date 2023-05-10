@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author tornak
- *
- */
-module zadaniaKlasy {
-}
