@@ -1,0 +1,40 @@
+img {
+    width: 20%;
+    height: 20%;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+.header {
+    width: 20%;
+
+}
+
+.main-part {
+    width: 79%;
+    overflow-y: auto;
+}
+
+footer {
+    border: 2px red solid;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: darkblue;
+}
+
+footer > p {
+    margin: 0;
+    padding-top: 10px;
+    color: white;
+}
+
+footer:last-child {
+    padding-bottom: 10px;
+}
+
+

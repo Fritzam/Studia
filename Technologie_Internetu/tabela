@@ -1,0 +1,16 @@
+<table> <!--atrybuty: colspan i rowspan-->
+            <tr>
+                <th>11</th>
+                <th colspan="2">12 13</th>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td>31</td>
+                <td>32</td>
+                <td>33</td>
+            </tr>
+        </table>

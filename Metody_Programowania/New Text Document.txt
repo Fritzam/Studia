@@ -1,0 +1,13 @@
+Zamówienie:
+  list Pizza
+  numer zamówienia
+
+pizza:
+  enum rozmiar m,ś,d;
+  str nazwa;
+  double/(big decimal) cena;
+
+main:
+  new pizza;
+  new pizza;
+  new zamowienie;
