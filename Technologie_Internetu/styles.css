@@ -1,8 +1,11 @@
- body {
+body {
     margin: 0;
     padding: 0;
     background-image: url(grafika/Desert.jpg);
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 50vh
 }
 
 
@@ -16,6 +19,8 @@ img {
     flex-wrap: wrap;
     width: 90%;
     margin: auto;
+    flex: 1;
+    max-height: 100vh;
 }
 .header {
     width: 20%;
@@ -29,9 +34,12 @@ img {
 
 .main-part {
     padding-left: 15px;
-    width: 79%;
+    padding-right: 15px;
+    width: 78%;
     background-color: orange;
     overflow-y: auto;
+    max-height: 100vh;
+    padding-bottom: 10px;
 }
 
 footer {
@@ -111,6 +119,11 @@ ul, li {
 }
 
 .outertext {
+}
+
+table {
+    margin: 0;
+    width: 80%;
 }
 
 
