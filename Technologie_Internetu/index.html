@@ -37,33 +37,36 @@
                     <h5>Podtytuł</h5>
                     <h6>Podtytuł</h6>
                     <form action="index.html" method="post">
-                        <div>
-                            <label for="imie">Imię i nazwisko</label> <!-- etykieta pola formularza--><br>
-                            <input type="text" name="imie" id="imie"> <!-- pole tekstowe jednowierszowe-->
+                        <div class="lewalista">
+                            <div>
+                                <label for="imie">Imię i nazwisko</label> <!-- etykieta pola formularza--><br>
+                                <input type="text" name="imie" id="imie"> <!-- pole tekstowe jednowierszowe-->
+                            </div>
+                            <div>
+                                <label for="opis">Opis</label><br>
+                                <textarea name="opis" id="opis"></textarea> <!-- standardowe pole wielowierszowe-->
+                            </div>
                         </div>
-                        <div>
-                            <label for="opis">Opis</label><br>
-                            <textarea name="opis" id="opis"></textarea> <!-- standardowe pole wielowierszowe-->
-                        </div>
-                        <div>
+                        <div class="prawalista">
                             <label for="lista">Wiek</label>
-                            <select name="lista" id="lista" multiple> <!-- lista rozwijalna-->
+                            <select name="lista" id="lista"> <!-- lista rozwijalna-->
                                 <option>1-18</option>
                                 <option>19-65</option>
                                 <option>65-</option>
                             </select>
                             <div>
                                 <label for="op1">Opcja</label><br>
-                                <input type="radio" name="opcja" id="op1">a
-                                <input type="radio" name="opcja" id="op2">b
+                                <input type="radio" name="opcja" id="op1">a<br>
+                                <input type="radio" name="opcja" id="op2">b<br>
                                 <input type="radio" name="opcja" id="op3">c
                             </div>
-                            <div>
+                            <!-- <div>
                                 <label for="ch1">Język</label><br>
                                 <input type="checkbox" name="opcja1" id="ch1">Angielski
                                 <input type="checkbox" name="opcja1" id="ch2">Niemiecki
                                 <input type="checkbox" name="opcja1" id="ch3">Francuski
                             </div>
+                            -->
                             <div>
                                 <input type="submit" name="wyślij" id="wyślij" value="Wyślij">
                                 <input type="reset" name="wyczyść" id="wyczyść" value="Wyczyść">

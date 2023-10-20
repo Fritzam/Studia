@@ -135,6 +135,20 @@ ul, li {
     padding-left: 18px;
 }
 
+textarea {
+    width: 300px;
+    height: 90px;
+}
+.lewalista {
+    width: 40%;
+    float: left;
+}
+.prawalista {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+
 .tablediv {
     width: 100%;
 }
