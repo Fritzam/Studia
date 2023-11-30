@@ -114,30 +114,14 @@ function poleFigury(figura, a, b, h) {
 console.log("Zadanie 7: \n" + poleFigury("trapez", 8, 6, 4))
 
 function poleFiguryCallback(figura, a, b, h) {
-    return "Wybrana figura to: " + figura + ". Jej pole to: " + wyborFigury(figura, a, b, h);
+    return "Wybrana figura to: " + figura(a, b, h) + ". Jej pole to: ";
 }
 const anonProstokat = (a, b) => a*b;
 const anonTrojkat = (a, h) => (a*h)/2;
 const anonTrapez = (a, b, h) => ((a+b)*h)/2;
 const anonRownoleglobok = (a, h) => (a*h);
 
-function wyborFigury(figura, a, b, h) {
-    switch(figura) {
-        case "prostokat":
-            return anonProstokat(a, b);
-        case "trojkat":
-            return anonTrojkat(a, h);
-        case "trapez":
-            return anonTrapez(a, b, h);
-        case "rownoleglobok":
-            return anonRownoleglobok(a, h);
-        default:
-            return "Prosze wpisac 'prostokat', 'trapez', 'rownoleglobok', lub 'trojkat' dla wybrania figury.";
-
-    }
-};
-
-console.log("Zadanie 8: \n" + poleFiguryCallback("rownoleglobok", 10, 0, 4));
+console.log("Zadanie 8: \n" + poleFiguryCallback(anonRownoleglobok, 10, 4, 4));
 
 function factorial(n) {
     if (n === 0) {

@@ -130,7 +130,7 @@ class Student {
         return this.sredniaOcen.toFixed(2);
     }
 
-    setOcena(ocena) {
+    set Ocena(ocena) {
         if (ocena instanceof Ocena) {
             this.tablicaOcen.push(ocena);
             let sumaOcen = 0;
@@ -143,7 +143,7 @@ class Student {
         }
     }
 
-    getOceny() {
+    get Oceny() {
         let stringOcen = "";
         for (let i = 0; i < this.tablicaOcen.length; i++) {
             stringOcen += ("Przedmiot: " + this.tablicaOcen[i].przedmiot + " - ocena: " + this.tablicaOcen[i].wartosc + ". \n");
@@ -153,10 +153,10 @@ class Student {
 }
 
 let student1 = new Student("Michał", "Fritza")
-student1.setOcena(ocena1);
-student1.setOcena(ocena2);
-student1.setOcena(new Ocena("Polski", 4));
-console.log(student1.getOceny());
+student1.Ocena = ocena1;
+student1.Ocena = ocena2;
+student1.Ocena = (new Ocena("Polski", 4));
+console.log(student1.Oceny);
 
 
 

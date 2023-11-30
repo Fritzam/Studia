@@ -44,7 +44,7 @@ public class RentalService {
         return true;
     }
 
-    private boolean isOverlappingDate(LocalDate startDate, LocalDate endDate, Rental rental) {
+    protected boolean isOverlappingDate(LocalDate startDate, LocalDate endDate, Rental rental) {
         boolean isEndDateBeforeRentalStart = endDate.isBefore(rental.getStartDate());
         boolean isStartDateAfterRentalEnd = startDate.isAfter(rental.getEndDate());
         return !(isEndDateBeforeRentalStart || isStartDateAfterRentalEnd);
@@ -52,7 +52,6 @@ public class RentalService {
 
 
     public double estimatePrice(String vin, LocalDate startDate, LocalDate endDate) {
-
         Car carByVin = findCarByVin(vin).orElseThrow();
         long days = Duration.between(startDate.atStartOfDay(), endDate.atStartOfDay()).toDays();
 

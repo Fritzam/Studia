@@ -21,6 +21,10 @@ public class CarStorage {
         carList.add(car);
     }
 
+    public void purgeList() {
+        carList.clear();
+    }
+
     public List<Car> getAll() {
 //        for ( Car car : carList){
 //            System.out.println(car.getKlasa());
