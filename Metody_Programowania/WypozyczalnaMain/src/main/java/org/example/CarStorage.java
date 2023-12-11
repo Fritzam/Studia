@@ -1,21 +1,19 @@
 package org.example;
 
+import org.springframework.stereotype.Component;
+
 import java.util.*;
 
+@Component
 public class CarStorage {
-    private CarStorage() {
-    }
-
-
-//    SINGLETON KURDE
-    private static CarStorage carStorage = null;
-    public static CarStorage getInstance() {
-        if (carStorage == null) carStorage = new CarStorage();
-        return carStorage;
-    }
-//    KONIEC SINGLETONA
 
     private List<Car> carList = new ArrayList<>();
+
+    public Optional<Car> findCarByVin(String vin) {
+        return carList.stream()
+                .filter(car -> car.getVin().equals(vin))
+                .findFirst();
+    }
 
     public void add(Car car) {
         carList.add(car);
@@ -26,9 +24,6 @@ public class CarStorage {
     }
 
     public List<Car> getAll() {
-//        for ( Car car : carList){
-//            System.out.println(car.getKlasa());
-//        }
         return carList;
     }
 

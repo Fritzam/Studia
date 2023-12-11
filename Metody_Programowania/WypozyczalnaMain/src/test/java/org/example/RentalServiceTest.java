@@ -4,10 +4,14 @@ import net.bytebuddy.asm.Advice;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.time.LocalDate;
 import java.util.NoSuchElementException;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
@@ -19,8 +23,8 @@ class RentalServiceTest {
 
     @BeforeEach
     void startUp() {
-        rentalStorage = RentalStorage.getInstance();
-        carStorage = CarStorage.getInstance();
+        rentalStorage = new RentalStorage();
+        carStorage = new CarStorage();
         rentalService = new RentalService(carStorage, rentalStorage);
     }
 
@@ -34,7 +38,7 @@ class RentalServiceTest {
         Car car = new Car("make", "model", "some-vin", Klasa.PREMIUM);
         carStorage.add(car);
         //WHEN
-        Optional<Car> carByVin = rentalService.findCarByVin("some-vin");
+        Optional<Car> carByVin = carStorage.findCarByVin("some-vin");
         //THEN
         assertThat(carByVin).isPresent();
     }
@@ -42,7 +46,7 @@ class RentalServiceTest {
     @Test
     void shouldNotFindCar() {
         //WHEN
-        Optional<Car> carByVin = rentalService.findCarByVin("some-vin");
+        Optional<Car> carByVin = carStorage.findCarByVin("some-vin");
         //THEN
         assertThat(carByVin).isEmpty();
     }
@@ -148,4 +152,30 @@ class RentalServiceTest {
         assertThat(testRental).isNull();
     }
 
+    @ParameterizedTest
+    @MethodSource("inputData")
+    void shouldHaveOverlappingDates(LocalDate startDate, LocalDate endDate) {
+        Car car = new Car("Make", "Model", "abc", Klasa.PREMIUM);
+        carStorage.add(car);
+
+        boolean test = rentalService.isAvalible(
+                car.getVin(),
+                startDate,
+                endDate
+        );
+
+        assertThat(test).isTrue();
+    }
+
+    public static Stream<Arguments> inputData() {
+        return Stream.of(
+                Arguments.of(LocalDate.of(2023, 11, 25), LocalDate.of(2023, 11, 30)),
+                Arguments.of(LocalDate.of(2023, 11, 15), LocalDate.of(2023, 11, 26)),
+                Arguments.of(LocalDate.of(2023, 11, 27), LocalDate.of(2023, 12, 6)),
+                Arguments.of(LocalDate.of(2023, 11, 29), LocalDate.of(2023, 12, 6)),
+                Arguments.of(LocalDate.of(2023, 11, 20), LocalDate.of(2023, 11, 25)),
+                Arguments.of(LocalDate.of(2023, 11, 20), LocalDate.of(2023, 11, 25)),
+                Arguments.of(LocalDate.of(2023, 11, 20), LocalDate.of(2023, 11, 25))
+        );
+    }
 }

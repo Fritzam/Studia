@@ -1,0 +1,34 @@
+.flexboxdivs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    width: 80%;
+    margin: auto;
+    border: red solid 5px;
+    gap: 20px;
+}
+
+.flexboxbuttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    width: 100%;
+    margin: auto;
+    gap: 3%;
+}
+
+.buttons {
+    width: 10%;
+    height: 30%;
+}
+
+.divs {
+    border: solid cadetblue 4px;
+    border-radius: 10px;
+    width: 20%;
+    height: 40%;
+
+}
+

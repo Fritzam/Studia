@@ -1,28 +1,24 @@
 package org.example;
 
+import org.springframework.stereotype.Service;
+
 import java.time.Duration;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class RentalService {
-    private final CarStorage carStorage;
     private final RentalStorage rentalStorage;
+    private final CarStorage carStorage;
 
     public RentalService(CarStorage carStorage, RentalStorage rentalStorage) {
         this.carStorage = carStorage;
         this.rentalStorage = rentalStorage;
     }
 
-
-    public Optional<Car> findCarByVin(String vin) {
-        return carStorage.getAll().stream()
-                .filter(car -> car.getVin().equals(vin))
-                .findFirst();
-    }
-
     public boolean isAvalible(String vin, LocalDate startDate, LocalDate endDate) {
-        boolean carDoesNotExist = findCarByVin(vin).isEmpty();
+        boolean carDoesNotExist = carStorage.findCarByVin(vin).isEmpty();
         if (carDoesNotExist) {
             return false;
         }
@@ -52,14 +48,14 @@ public class RentalService {
 
 
     public double estimatePrice(String vin, LocalDate startDate, LocalDate endDate) {
-        Car carByVin = findCarByVin(vin).orElseThrow();
+        Car carByVin = carStorage.findCarByVin(vin).orElseThrow();
         long days = Duration.between(startDate.atStartOfDay(), endDate.atStartOfDay()).toDays();
 
         return days * 500 * carByVin.getKlasa().getMultiplier();
     }
 
     public Rental rent(int userId, String vin, LocalDate startDate, LocalDate endDate) {
-        Car carByVin = findCarByVin(vin).orElseThrow();
+        Car carByVin = carStorage.findCarByVin(vin).orElseThrow();
         if (isAvalible(vin, startDate, endDate)) {
             Rental rental = new Rental(new User(userId), carByVin, startDate, endDate);
             rentalStorage.addRental(rental);
