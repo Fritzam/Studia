@@ -1,0 +1,71 @@
+html, body {
+    width: 99vw;
+    height: 99vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.poleKalkulatora {
+    width: 20%;
+    height: 14%;
+    border: solid rosybrown 5px;
+    margin: 22% auto;
+    padding: 0;
+}
+
+.poleWyniku {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    padding-right: 2%;
+    height: 40%;
+    background-color: antiquewhite;
+}
+
+.poleWyborów {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 58%;
+    background-color: sandybrown;
+}
+
+.options {
+    display:flex;
+    gap: 5%;
+}
+
+.labelHolder {
+    margin: 0;
+    width: 22%;
+}
+
+
+input, select {
+    display:block;
+    width: 99%;
+}
+
+label {
+    display: inline-block;
+}
+
+fieldset {
+    border: none;
+}
+
+input, select, button {
+    height: 30px;
+}
+
+
+hr {
+    padding: 0;
+    margin: 0;
+    height: 5px;
+    border: none;
+    background-color: rosybrown;
+}
+

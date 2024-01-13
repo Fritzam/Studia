@@ -1,0 +1,15 @@
+table {
+    border: 2px darkgrey solid;
+    border-collapse: collapse;
+}
+
+th {
+    border: 2px darkgrey solid;
+}
+
+td {
+    text-align: center;
+    border-right: 2px solid darkgrey;
+    border-bottom: 1px solid darkgrey;
+    padding: 5px 10px;
+}

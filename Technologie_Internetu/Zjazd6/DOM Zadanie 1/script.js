@@ -16,6 +16,14 @@ window.onload = function() {
     };
 
     button3.onclick = function() {
-        document.querySelector("div.flexboxdivs").children[2].style.background("red");
+        document.querySelector(".flexboxdivs").children[2].style.background = "red";
+    }
+
+    button4.onclick = function () {
+        let nodes = document.querySelectorAll(".flexboxdivs > div");
+        nodes.forEach((div) => div.innerHTML = "Dodałem tekst do wszystkich :)");
+        nodes.forEach((div) => div.style.display = "flex");
+        nodes.forEach((div) => div.style.justifyContent = "center");
+        nodes.forEach((div) => div.style.alignItems = "center");
     }
 }
