@@ -1,4 +1,5 @@
 package org.example;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
@@ -6,7 +7,6 @@ import java.util.*;
 @Component
 public class RentalStorage {
     private List<Rental> rentalList = new ArrayList<>();
-
     public void addRental(Rental rental){
         rentalList.add(rental);
     }
